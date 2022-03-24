@@ -144,10 +144,10 @@ const getNewPageWhenLoaded = async (browser) => {
         await page2.evaluate(() => document.querySelector("#app-content > div > div.main-container-wrapper > div > div > div > div.metametrics-opt-in__footer > div.page-container__footer > footer > button.button.btn--rounded.btn-primary.page-container__footer-button").click());
 
         await page2.waitForSelector("#create-password");
-        await page2.type("#create-password", 'coegsekali1', { delay: 30 });
+        await page2.type("#create-password", 'etlgoingtobegood', { delay: 30 });
 
         await page2.waitForSelector("#confirm-password");
-        await page2.type("#confirm-password", 'coegsekali1', { delay: 30 });
+        await page2.type("#confirm-password", 'etlgoingtobegood', { delay: 30 });
 
         await page2.waitForSelector('#app-content > div > div.main-container-wrapper > div > div > div:nth-child(2) > form > div.first-time-flow__checkbox-container > div');
         await page2.evaluate(() => document.querySelector("#app-content > div > div.main-container-wrapper > div > div > div:nth-child(2) > form > div.first-time-flow__checkbox-container > div").click());
@@ -178,7 +178,7 @@ const getNewPageWhenLoaded = async (browser) => {
         await page2.evaluate(() => document.querySelector("#app-content > div > div.main-container-wrapper > div > div.settings-page__content > div.settings-page__content__modules > div.settings-page__body > div:nth-child(1) > div:nth-child(2) > div > button").click());
 
         await page2.waitForSelector("#password-box");
-        await page2.type("#password-box", 'coegsekali1', { delay: 30 });
+        await page2.type("#password-box", 'etlgoingtobegood', { delay: 30 });
 
         await page2.waitForSelector('#app-content > div > div.main-container-wrapper > div > div.page-container__footer > footer > button.button.btn--rounded.btn-primary.btn--large.page-container__footer-button');
         await page2.evaluate(() => document.querySelector("#app-content > div > div.main-container-wrapper > div > div.page-container__footer > footer > button.button.btn--rounded.btn-primary.btn--large.page-container__footer-button").click());
@@ -189,7 +189,7 @@ const getNewPageWhenLoaded = async (browser) => {
         await page2.waitForSelector('#app-content > div > div.main-container-wrapper > div > div.page-container__content > div.reveal-seed__content > div > div > div.export-text-container__text-container > div');
         let elementTextPharse = await page2.$('#app-content > div > div.main-container-wrapper > div > div.page-container__content > div.reveal-seed__content > div > div > div.export-text-container__text-container > div');
         let valueTextPharse = await page2.evaluate(el => el.textContent, elementTextPharse);
-        fs.appendFileSync('wallet.txt', `${valueTextPharse}|${email}|coegsekali1\n`, 'utf-8');
+        fs.appendFileSync('wallet.txt', `${valueTextPharse}|${email}|etlgoingtobegood\n`, 'utf-8');
 
 
         await page.bringToFront();
@@ -204,10 +204,10 @@ const getNewPageWhenLoaded = async (browser) => {
         await page.type("#email", email, { delay: 30 });
 
         await page.waitForSelector("#password");
-        await page.type("#password", 'coegsekali1', { delay: 30 });
+        await page.type("#password", 'etlgoingtobegood', { delay: 30 });
 
         await page.waitForSelector("#password_confirmation");
-        await page.type("#password_confirmation", 'coegsekali1', { delay: 30 });
+        await page.type("#password_confirmation", 'etlgoingtobegood', { delay: 30 });
 
         await page.waitForSelector('#submit > button');
         await page.evaluate(() => document.querySelector("#submit > button").click());
@@ -230,7 +230,7 @@ const getNewPageWhenLoaded = async (browser) => {
         await page4.waitForSelector('#tokens > div > ul > li:nth-child(1) > a');
         await page4.evaluate(() => document.querySelector("#tokens > div > ul > li:nth-child(1) > a").click());
 
-        await delay(1000)
+        await delay(3000)
 
         await page4.waitForSelector('#add-wallet');
         await page4.evaluate(() => document.querySelector("#add-wallet").click());
@@ -289,6 +289,8 @@ const getNewPageWhenLoaded = async (browser) => {
         const uploadImage = await page4.$("#complete-mission-form > form > input.file");
         await uploadImage.uploadFile('./saktiku.jpeg');
         await page4.click('#complete-mission-form > form > input.button');
+
+        await delay(3000)
 
         await browser.close()
 
